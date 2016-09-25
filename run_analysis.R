@@ -38,6 +38,6 @@ colnames(SubData)[1] = "Subject"
 TidyData <- aggregate(SubData, by=list(SubData$Subject,SubData$Activity), FUN=mean)
 TidyData <- TidyData[,-c(3,4)]
 colnames(TidyData)[1:2] = c("Subject","Activity")
-capture.output(TidyData, file = "TidyData.txt", row.name=FALSE)
+write.table(TidyData, "TidyData.txt", row.name=FALSE)
 
 
